@@ -1,0 +1,20 @@
+# Cloudflare configuration
+root_domain = ""
+#
+# Hetzner Cloud configuration for Talos
+hcloud_token              = ""
+hcloud_region             = "fsn1"
+hcloud_control_plane_type = "cx32"
+
+# Talos configuration
+cluster_name        = "homelab-talos"
+talos_version       = "v1.10.1"
+control_plane_count = 1
+worker_count        = 0
+
+# Network configuration
+network_cidr        = "10.0.0.0/8"
+servers_subnet_cidr = "10.0.1.0/24"
+
+# Kubernetes API domain name
+kubernetes_api_domain = "" # k8s api dns prefix

@@ -1,0 +1,32 @@
+machine:
+  install:
+    disk: /dev/disk/by-id/nvme-disk
+    bootloader: true
+    wipe: true
+  network:
+    kubespan:
+      enabled: true
+    hostname: talos-worker-3.internal
+    interfaces:
+      - interface: enp2s0
+        addresses:
+          - 10.200.0.4/24
+        dhcp: false
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 10.200.0.1
+  sysctls:
+    user.max_user_namespaces: "11255"
+  kubelet:
+    extraConfig:
+      featureGates:
+        UserNamespacesSupport: true
+        UserNamespacesPodSecurityStandards: true
+    extraMounts:
+      - destination: /var/lib/longhorn
+        type: bind
+        source: /var/lib/longhorn
+        options:
+          - bind
+          - rshared
+          - rw

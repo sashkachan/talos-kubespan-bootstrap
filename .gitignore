@@ -1,0 +1,17 @@
+.DS_Store
+.idea
+*.log
+tmp/
+.aider*
+.env
+.terraform
+terraform.tfstate
+.terraform.lock.hcl
+*.tfvars
+terraform.tfstate.backup
+*.pid
+generated/*
+manifests/secrets.yaml
+manifests/private
+manifests/*.json
+**/*secret*

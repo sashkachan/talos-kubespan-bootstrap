@@ -132,18 +132,22 @@ Execute talosctl commands on the cluster:
 ```bash
 # Check cluster version
 make talos CMD='version'
-
-# View cluster dashboard
-make talos CMD='dashboard'
-
-# Check logs on specific node
-make talos CMD='logs kubelet' TALOS_NODE_IP=10.0.0.1
-
-## Cluster Reset
-
-⚠️ **WARNING**: This will completely reset your cluster!
+```
 
 ```bash
+# View cluster dashboard
+make talos CMD='dashboard'
+```
+
+```bash
+# Check logs on specific node
+make talos CMD='logs kubelet' TALOS_NODE_IP=10.0.0.1
+```
+
+```bash
+# Cluster Reset
+# ⚠️ **WARNING**: This will completely reset your cluster!
+
 make talos-reset-cluster
 ```
 
@@ -158,7 +162,7 @@ make talos-reset-cluster
 
 2. **Missing cluster_info.env**: Run the prepare step first:
    ```bash
-   make talos-prepare TALOS_VERSION=v1.7.1
+   make talos-prepare TALOS_VERSION=v1.10.1
    ```
 
 3. **Configuration not found**: Ensure previous steps completed successfully:

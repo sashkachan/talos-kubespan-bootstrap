@@ -45,23 +45,7 @@ resource "hcloud_firewall" "cluster_firewall" {
     port       = "6443"
     source_ips = ["0.0.0.0/0", "::/0"]
   }
-
-  # Allow HTTP for Cilium Gateway
-  rule {
-    direction  = "in"
-    protocol   = "tcp"
-    port       = "80"
-    source_ips = ["0.0.0.0/0", "::/0"]
-  }
-
-  # Allow HTTPS for Cilium Gateway
-  rule {
-    direction  = "in"
-    protocol   = "tcp"
-    port       = "443"
-    source_ips = ["0.0.0.0/0", "::/0"]
-  }
-
+  #
   # Allow Kubespan
   rule {
     direction  = "in"
@@ -85,22 +69,7 @@ resource "hcloud_firewall" "cluster_firewall" {
     port       = "50001"
     source_ips = ["0.0.0.0/0", "::/0"]
   }
-
-  # Allow etcd traffic between nodes
-  rule {
-    direction  = "in"
-    protocol   = "tcp"
-    port       = "2379"
-    source_ips = ["0.0.0.0/0", "::/0"]
-  }
-
-  rule {
-    direction  = "in"
-    protocol   = "tcp"
-    port       = "2380"
-    source_ips = ["0.0.0.0/0", "::/0"]
-  }
-
+  #
   # ICMP
   rule {
     direction  = "in"

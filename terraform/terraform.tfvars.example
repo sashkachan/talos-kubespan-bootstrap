@@ -1,6 +1,7 @@
-# Cloudflare configuration
 root_domain = ""
-#
+# Kubernetes API domain name
+kubernetes_api_domain = "" # k8s api dns prefix
+
 # Hetzner Cloud configuration for Talos
 hcloud_token              = ""
 hcloud_region             = "fsn1"
@@ -15,6 +16,3 @@ worker_count        = 0
 # Network configuration
 network_cidr        = "10.0.0.0/8"
 servers_subnet_cidr = "10.0.1.0/24"
-
-# Kubernetes API domain name
-kubernetes_api_domain = "" # k8s api dns prefix
